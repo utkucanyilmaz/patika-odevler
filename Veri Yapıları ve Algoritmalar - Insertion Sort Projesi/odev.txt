@@ -1,0 +1,23 @@
+1-)
+
+1. adım - [22,27,16,2,18,6] -> 22, 27 den küçük işlem yapmadan devam eder
+2. adım - [22,27,16,2,18,6] -> 22,16,27,2,18,6 -> 16,22,27,2,18,6 -> 27 ve 16 yı kıyaslar 16 daha küçüktür yerlerini değiştirir bu sefer tekrardan 22 ile 16 yı karşılaştırır daha küçük olduğundan yer değiştirir
+3. adım - [16,22,27,2,18,6] -> 16,22,2,27,18,6 -> 16,2,22,27,18,6 -> 2,16,22,27,18,6 -> 2 diğerlerinden küçük olduğu için en başa kadar kıyaslar
+4. adım - [2,16,22,27,18,6] -> 2,16,22,18,27,6 -> 2,16,18,22,27,6 
+5. adım - [2,16,18,22,27,6] -> 2,16,18,22,6,27 -> 2,16,18,6,22,27 -> 2,16,6,18,22,27 -> 2,6,16,18,22,27
+6. adım - [2,6,16,18,22,27]
+
+2-)
+
+O(n^2)
+
+4-) Average case
+
+[7,3,5,8,2,9,4,15,6] dizisinin Insertion Sort'a göre ilk 4 adımını yazınız.
+
+1. adım - [3,7,5,8,2,9,4,15,6]
+2. adım - [3,5,7,8,2,9,4,15,6]
+3. adım - [2,3,5,7,8,9,4,15,6]
+4. adım - [2,3,4,5,7,8,9,15,6]
+
+Aradaki işlem yapılmayan adımları atlayarak yazdım.
