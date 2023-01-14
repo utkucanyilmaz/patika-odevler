@@ -20,9 +20,15 @@ function Input({ todos, setTodos }) {
   };
 
   const handleAllChecked = () => {
-    todos.map(todo => {
-      console.log({});
+    const checked = todos.map(todo => {
+      if (todos.some(todo => todo.done === false)) {
+        return { ...todo, done: true };
+      } else {
+        return { ...todo, done: false };
+      }
     });
+
+    setTodos(checked);
   };
 
   const onSubmit = e => {
@@ -38,7 +44,15 @@ function Input({ todos, setTodos }) {
     <div className="flex bg-white py-4 pl-2 pr-4 gap-x-4 shadow-lg w-full">
       {todos.length > 0 ? (
         <button onClick={handleAllChecked}>
-          <FiChevronDown className="text-gray-200" size={"2rem"} />
+          <FiChevronDown
+            className={`transition-colors 
+              ${
+                todos.every(todo => todo.done)
+                  ? "text-gray-600"
+                  : "text-gray-200"
+              }`}
+            size={"2rem"}
+          />
         </button>
       ) : (
         <div className="w-8"></div>

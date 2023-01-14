@@ -13,12 +13,13 @@ function Todo({ text, done, todos, setTodos, id }) {
         <input
           className="w-[2rem] h-[2rem] "
           type="checkbox"
+          checked={done}
           onChange={handleChange}
           name=""
           id=""
         />
         <span
-          className={`text-2xl text-gray-600  ${
+          className={`text-2xl text-gray-600 transition-all ${
             done ? "line-through text-opacity-20" : ""
           }
         `}
