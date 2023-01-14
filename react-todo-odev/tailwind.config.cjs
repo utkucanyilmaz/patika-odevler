@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         titleColor: "rgb(175, 47, 47, 0.15)",
+        cross: "#cc9a9a",
       },
     },
   },
