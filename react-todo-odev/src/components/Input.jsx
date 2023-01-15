@@ -41,7 +41,7 @@ function Input({ todos, setTodos }) {
   };
 
   return (
-    <div className="flex bg-white py-4 pl-2 pr-4 gap-x-4 shadow-lg w-full">
+    <div className="flex bg-white p-4 gap-x-4 w-full">
       {todos.length > 0 ? (
         <button onClick={handleAllChecked}>
           <FiChevronDown
@@ -55,10 +55,10 @@ function Input({ todos, setTodos }) {
           />
         </button>
       ) : (
-        <div className="w-8"></div>
+        <div className="w-9"></div>
       )}
 
-      <form onSubmit={onSubmit}>
+      <form className="w-full" onSubmit={onSubmit}>
         <input
           className="text-2xl text-gray-600 placeholder:text-gray-200 placeholder:italic focus:outline-none w-full"
           name="text"
