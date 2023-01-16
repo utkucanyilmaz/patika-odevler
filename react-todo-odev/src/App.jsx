@@ -4,24 +4,14 @@ import Todos from "./components/Todos";
 import Filters from "./components/Filters";
 
 function App() {
-  const [todos, setTodos] = useState([
-    {
-      id: "1",
-      text: "Taste JavaScript",
-      done: true,
-    },
-    {
-      id: "2",
-      text: "Code furiously",
-      done: true,
-    },
-    {
-      id: "3",
-      text: "Promote Mavo",
-      done: false,
-    },
-  ]);
+  const [todos, setTodos] = useState(() => {
+    return JSON.parse(localStorage.getItem("todos")) || [];
+  });
   const [show, setShow] = useState("all");
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const completedTodos = todos.filter(todo => todo.done);
   const activeTodos = todos.filter(todo => !todo.done);
