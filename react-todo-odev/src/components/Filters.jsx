@@ -7,7 +7,11 @@ function Filters({ activeTodos, completedTodos, setShow, setTodos, show }) {
 
   return (
     <div className="bg-white flex item-center justify-between py-2 px-4 text-gray-500 border-b border-gray-200 text-sm">
-      <p className="flex items-center">{activeTodos.length} items left</p>
+      <p className="flex items-center">
+        {activeTodos.length === 1
+          ? `${activeTodos.length} item left`
+          : `${activeTodos.length} items left`}
+      </p>
       <div className="flex gap-x-3">
         <button
           className={`px-[7px] py-[3px] flex items-center ${
