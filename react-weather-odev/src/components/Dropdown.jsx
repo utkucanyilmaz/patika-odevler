@@ -7,8 +7,9 @@ function Dropdown() {
     setSelectedCity(e.target.value);
   };
   return (
-    <div className="bg-blue-50 p-4 w-[500px]">
+    <div className="bg-blue-50 p-4">
       <select
+        className="min-w-[30%] p-2 border border-gray-300 rounded-md"
         defaultValue={selectedCity}
         onChange={handleChange}
         name="cities"
