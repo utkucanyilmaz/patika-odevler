@@ -1,5 +1,12 @@
+import Content from "./components/Content";
+import { WeatherProvider } from "./context/WeatherContext";
+
 function App() {
-  return <div className="bg-red-400">test</div>;
+  return (
+    <WeatherProvider>
+      <Content />
+    </WeatherProvider>
+  );
 }
 
 export default App;
